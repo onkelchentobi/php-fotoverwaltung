@@ -1,7 +1,5 @@
 # php-fotoverwaltung 0.92 Beta
 
-[screenshot2.png](https://github.com/onkelchentobi/php-fotoverwaltung/blob/625d53ca3fa90dbe0d3664b740525356ebda0d32/screenshot2.png)
-
 ### PHP Photo Management System
 
 A lightweight, ultra-fast, and zero-installation photo management system. It combines a minimalist PHP backend with a single-file frontend interface (fotos.html) designed to view, organize, and manage large photo collections locally or on a private web server. 
