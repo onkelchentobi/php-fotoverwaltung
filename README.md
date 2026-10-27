@@ -3,7 +3,7 @@
 ![Vorschau der Benutzeroberfläche 1](screenshot4.png)
 ![Vorschau der Benutzeroberfläche 2](screenshot1.png)
 ![Vorschau der Benutzeroberfläche 3](screenshot2.png)
-![Vorschau der Benutzeroberfläche 3](screenshot3.png)
+![Vorschau der Benutzeroberfläche 4](screenshot3.png)
 
 
 ### PHP Photo Management System
