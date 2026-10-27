@@ -1,5 +1,7 @@
 # php-fotoverwaltung 0.92 Beta
 
+screenshot2.png
+
 ### PHP Photo Management System
 
 A lightweight, ultra-fast, and zero-installation photo management system. It combines a minimalist PHP backend with a single-file frontend interface (fotos.html) designed to view, organize, and manage large photo collections locally or on a private web server. 
