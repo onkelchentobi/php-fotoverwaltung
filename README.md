@@ -1,6 +1,6 @@
 # php-fotoverwaltung 0.92 Beta
 
-screenshot2.png
+[screenshot2.png](https://github.com/onkelchentobi/php-fotoverwaltung/blob/625d53ca3fa90dbe0d3664b740525356ebda0d32/screenshot2.png)
 
 ### PHP Photo Management System
 
