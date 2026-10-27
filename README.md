@@ -72,3 +72,76 @@ This is a free and open-source project! Contributions, bug reports, and feature 
 ### License
 
 This project is licensed under the GNU General Public License v3.0 - see the LICENSE file for details.
+
+### PHP Foto-Verwaltungssystem
+
+Ein schlankes, extrem schnelles und installationsfreies System zur Verwaltung digitaler Fotos. Es kombiniert ein minimalistisches PHP-Backend mit einer Benutzeroberfläche, die in einer einzigen Datei (fotos.html) gebündelt ist, um große Bildersammlungen lokal oder auf einem privaten Server komfortabel zu organisieren. 
+
+### Kernphilosophie: Datentransparenz & Zerstörungsfreie Verwaltung
+
+* **100% lesbare Text-Datenbank:** Alle Bewertungen, Alben, Schlagwörter und Geo-Daten werden in einer reinen, absolut menschenlesbaren Textdatei (fotos_db.txt) abgespeichert. Du benötigst keine spezielle Datenbanksoftware oder proprietäre Tools, um deine Daten einzusehen, zu sichern oder zu migrieren. Jedes einfache Textprogramm kann die Datei öffnen.
+* **Zerstörungsfreie Bildintegrität:** Deine Originalbilder werden **absolut unangetastet gelassen**. Das System nimmt keinerlei Modifikationen an deinen Originaldateien vor und schleust keine versteckten Metadaten (wie EXIF-Daten) in die Bilddateien selbst ein. Alle Informationen werden strikt extern verwaltet.
+
+### Hauptmerkmale & Programmfunktionen
+
+### 1. Keine Installation & Single-File Frontend
+
+* **Eine einzige HTML-Datei:** Die gesamte Benutzeroberfläche befindet sich in nur einer einzigen Datei (fotos.html).
+* **Keine Abhängigkeiten (Zero Dependencies):** Läuft komplett autark ohne externe Frameworks, Skriptbibliotheken oder internetabhängige CDNs (kein React, Angular, jQuery oder Bootstrap).
+* **Flexible Nutzung:** Funktioniert ohne Installation sofort out of the box. Du kannst es lokal auf deinem PC (z. B. über lokale Serverumgebungen wie XAMPP) starten oder auf einem klassischen Webserver hosten, der PHP unterstützt.
+
+### 2. Geräte- und Browser-Kompatibilität
+
+* **PC & Mobilgeräte:** Die responsive Benutzeroberfläche passt sich automatisch an große Desktop-Monitore sowie an mobile Geräte (Smartphones und Tablets) an.
+* **Chromium-Optimiert:** Nutzt modernste Web-Standards und ist gezielt für die Ausführung in modernen Chromium-basierten Browsern wie **Google Chrome** oder **Microsoft Edge** entwickelt worden.
+
+### 3. Fotokategorisierung & Metadaten
+
+* **Sterne-Bewertungen:** Vergib 0 bis 3 Sterne, um deine besten Aufnahmen schnell von Ausschussware zu trennen.
+* **Farbmarkierungen:** Weise Fotos visuelle Farben zu (Rot, Grün, Gelb, Blau, Weiß, Magenta, Schwarz), um Arbeitsabläufe oder Themen zu kennzeichnen.
+* **Alben-Verwaltung:** Erstelle maßgeschneiderte Fotoalben und füge ausgewählte Bilder flexibel hinzu oder entferne sie wieder.
+* **Verschlagwortung (Tags):** Hinterlege Suchbegriffe und Schlagwörter für deine Fotos, um bestimmte Motive oder Personen sofort wiederzufinden.
+* **Geo-Daten-Speicherung:** Speichere und verwalte geografische Koordinaten direkt am Foto für eine ortsbasierte Sortierung.
+
+### 4. Komfortable Bildrecherche & Auswahl
+
+* **Flexible Ansichten:** Durchstöbere deine Sammlung chronologisch über eine dynamische Zeitleiste, betrachte zuletzt hinzugefügte Bilder oder navigiere klassisch über deine Ordnerstruktur.
+* **Blitzschnelle Filter:** Filtere deine Ansicht im Handumdrehen nach Sternen, zugewiesenen Farblabeln oder Suchbegriffen.
+* **Foto-Vergleichsmodus:** Vergleiche mehrere ausgewählte Bilder direkt nebeneinander auf dem Bildschirm, um bei Serienaufnahmen ganz leicht das beste Bild herauszusuchen.
+* **Sammelbearbeitung (Multi-Select):** Wähle mehrere Fotos gleichzeitig aus, um Sterne, Farben oder Alben für ganze Gruppen auf einmal zu ändern.
+
+### 5. Intelligenter Bild-Export & Exportformate
+
+* **Verfügbare Exportformate:** Exportiere deine Bilder direkt aus der Anwendung heraus in verschiedene optimierte Zielformate: 
+
+  * **JPEG:** Maximale Kompatibilität mit stufenlosem Qualitätsregler (0–100 %).
+  * **WebP:** Modernes, hocheffizient komprimiertes Bildformat für das Web.
+  * **PNG:** Verlustfreies Grafikformat.
+  * **PDF:** Wahlweise als verlustfreies Dokument oder als JPEG-komprimierter (100 %) Container.
+* **Automatischer Überschreibschutz:** Beim Exportieren legt das System die Datei mit einer fortlaufenden Nummerierung (z. B. BILD_001.jpg, BILD_002.png) direkt neben das Original. Es prüft den Ordner vorab, damit **niemals bestehende Bilder überschrieben** werden.
+* **Großdatei-Unterstützung:** Verarbeitet selbst riesige Exporte (bis zu 400 MB Gesamtgröße) problemlos, indem sie für eine stabile Übertragung in verdauliche Teilstücke unter 2 MB zerlegt werden.
+
+### 6. Hintergrundprozesse & Automatisierung
+
+* **Hochgeschwindigkeits-Vorschau (Thumbnails):** Erstellt und verwaltet im Hintergrund blitzschnelle Vorschaubilder mittels MD5-Hashes. Das garantiert minimale Ladezeiten der Galerie – selbst bei riesigen Fotoarchiven.
+* **Automatische Datensicherung (Tägliche Backups):** Vor dem ersten Speichern eines neuen Tages sichert das System deine komplette Metadaten-Datenbank vollautomatisch als fotos_db_sicherung_JJJJ-MM-TT.txt. Es hält die letzten 3 Tage vor und löscht ältere Stände selbstständig.
+* **Echtzeit-Aktualisierung:** Neue Fotos, die du in deine Ordnerstruktur kopierst, werden über einen rekursiven Scanner sofort erkannt und erscheinen ohne manuelles Zutun in deiner Anwendung.
+
+### Ordnerstruktur
+
+* fotos.html - Die All-in-One Benutzeroberfläche.
+* fotos_db.txt - Die dateibasierte Hauptdatenbank, die all deine Bewertungen, Alben und Tags speichert.
+* Thumbnail/ - Cache-Verzeichnis für die MD5-kodierten .jpg-Vorschauen für schnellen Seitenaufbau.
+* .export_tmp/ - Temporärer Zwischenspeicher für unvollständige Upload-Fragmente.
+
+### Sicherheitshinweis
+
+**WICHTIG:** Dieses Programm ist auf maximale Privatsphäre und lokale Geschwindigkeit ausgelegt. Es besitzt **keine integrierte Benutzeranmeldung**. Da es tiefgreifende Rechte besitzt (z. B. das Löschen von Dateien auf der Festplatte), betreibe es niemals ungeschützt im öffentlichen Internet. Sichere das Verzeichnis zwingend über einen Passwortschutz (.htaccess / Basic Auth) ab oder nutze es ausschließlich im lokalen Netzwerk (LAN) oder über ein sicheres VPN. 
+
+### Open Source & Mitwirken
+
+Dies ist ein freies Open-Source-Projekt! Fehlerberichte, Verbesserungsvorschläge und Code-Beiträge (Pull Requests) sind herzlich willkommen. Du kannst das Repository gerne forken und deine eigenen Ideen einbringen. 
+
+### Lizenz
+
+Dieses Projekt ist unter der GNU General Public License v3.0 lizenziert – siehe die LICENSE-Datei für Details.
